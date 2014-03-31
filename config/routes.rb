@@ -1,6 +1,6 @@
 RailsCraigs::Application.routes.draw do
 
-  resources :categories, only: [:index] do
+  resources :categories, only: [:index, :show] do
     resources :posts
   end
 
