@@ -1,7 +1,7 @@
 RailsCraigs::Application.routes.draw do
 
-  resource :categories, only: [:index] do
-    resource :posts
+  resources :categories, only: [:index] do
+    resources :posts
   end
 
   # The priority is based upon order of creation: first created -> highest priority.
