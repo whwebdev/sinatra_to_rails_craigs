@@ -3,13 +3,15 @@
 <head>
   <title>Sarah and Adam's List</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <link href='http://fonts.googleapis.com/css?family=Voltaire' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz' rel='stylesheet' type='text/css'>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 <header>
   <div id="heading">
-    <a href = '/'>Sarah and Adam's List</a><span id="tagline">A place to buy and sell stuff through posts.</span>
+    <%= link_to "Sarah and Adam's List", categories_path %><span id="tagline">A place to buy and sell stuff through posts.</span>
   </div>
 </header>
 <div class="container">
