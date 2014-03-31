@@ -1,14 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsCraigs</title>
+  <title>Sarah and Adam's List</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+  <div id="heading">
+    <a href = '/'>Sarah and Adam's List</a><span id="tagline">A place to buy and sell stuff through posts. That's about all for now.</span>
+  </div>
+</header>
+<div class="container">
 <%= yield %>
-
+</div> <!-- class="container" -->
 </body>
 </html>
