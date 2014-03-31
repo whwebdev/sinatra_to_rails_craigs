@@ -1,10 +1,6 @@
-<header><h1><a href = '/'>Sarah and Adam's List</a></h1></header>
-<div class="container">
-  <p>A place to buy and sell stuff through posts.</p>
-  <h3>Select a category:</h3>
-  <ul>
-    <% Category.all.each do |category| %>
-      <a href="/categories/<%= category.id %>/posts"><li><%= category.name %></li></a>
-    <% end %>
-  </ul>
-</div>
+<h3>Select a category</h3>
+<ul>
+  <% Category.all.each do |category| %>
+    <a href="/categories/<%= category.id %>/posts"><li><%= category.name %></li></a>
+  <% end %>
+</ul>
