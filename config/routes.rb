@@ -1,7 +1,7 @@
 RailsCraigs::Application.routes.draw do
 
   resources :categories, only: [:index, :show] do
-    resources :posts
+    resources :posts, shallow: true
   end
 
   root "categories#index"

@@ -1,7 +1,7 @@
 <h3><%= @category.name.capitalize %></h3>
 <ul>
   <% @category.posts.each do |post| %>
-    <%= link_to post.title, "/categories/#{@category.id}/posts/#{post.id}" %>
+    <li><%= link_to post.title, post %></li>
   <% end %>
 </ul>
-<p><a href="/categories/<%= @category.id %>/posts/new_post">Make a new post in <%= @category.name.capitalize %>!</a></p>
+<p><%= link_to "Make a new post in #{@category.name.capitalize}", new_category_post_path(@category.id) %></p>

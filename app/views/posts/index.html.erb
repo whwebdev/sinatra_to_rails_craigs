@@ -1,0 +1,7 @@
+<h3><%= @category.name.capitalize %></h3>
+<ul>
+  <% @category.posts.each do |post| %>
+    <%= link_to post.title, category_post %>
+  <% end %>
+</ul>
+<p><a href="/categories/<%= @category.id %>/posts/new_post">Make a new post in <%= @category.name.capitalize %>!</a></p>
