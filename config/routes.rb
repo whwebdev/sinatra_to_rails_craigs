@@ -4,6 +4,9 @@ RailsCraigs::Application.routes.draw do
     resources :posts, shallow: true
   end
 
+  post "posts/:id/check_key", to: "posts#check_key", as: "check_key"
+
+
   root "categories#index"
 
   # The priority is based upon order of creation: first created -> highest priority.

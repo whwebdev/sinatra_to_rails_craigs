@@ -1,0 +1,23 @@
+<h3><%= link_to @post.category.name.capitalize, category_posts_path(@post.category.id) %> > <%= @post.title %></h3>
+<div id="post">
+  <p>Price:&nbsp;&nbsp;&nbsp;$<%= @post.price %></p>
+  <p>Contact:&nbsp;&nbsp;&nbsp;<%= mail_to @post.email, @post.email, subject: @post.title %></p>
+  <p><%= @post.body %></p>
+  <br>
+  <br>
+
+  <%= form_tag check_key_path(@post.id) do %>
+    <p>Got your edit key? Enter it below to edit this post</p>
+    <%= text_field_tag :key_to_check %>
+    <%= submit_tag("Edit") %>
+  <% end %>
+
+  <%if session[:saved_text] %>
+    <div class='error'><p><%= session[:saved_text] %></p></div>
+    <% session[:saved_text] = nil %>
+  <% end %>
+  <%if session[:warning] %>
+    <div class='error'><p><%= session[:warning] %></p></div>
+    <% session[:warning] = nil %>
+  <% end %>
+</div>
