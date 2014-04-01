@@ -1,0 +1,20 @@
+<div id="post">
+  <form action="/save_post" method="post">
+    Title:<br><input type="text" name="title" size="35" value="<%= @post.title %>" autofocus required>
+    <br>
+    <br>
+    Body:<br><textarea rows="15" cols="72" name="post_body"required><%= @post.body %></textarea>
+    <br>
+    <br>
+    Price:<br>$<input type="text" name="price" size="10" value="<%= @post.price %>" required>
+    <br>
+    <br>
+    Contact Email:<br><input type="email" name="user_email" size="35" value="<%= @post.email %>" required>
+    <br>
+    <p>Keep this key to edit this post: <%= @post.edit_url%></p>
+    <br>
+    <input type="submit" name="submit_button" value="update">
+    <input type="submit" name="submit_button" value="cancel">
+    <input type="hidden" name="post_id" value="<%= @post.id %>">
+  </form>
+<div>

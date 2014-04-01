@@ -5787,3 +5787,17 @@ Started GET "/assets/jquery.js?body=1" for 127.0.0.1 at 2014-03-31 16:23:42 -050
 
 Started GET "/assets/mainbg.jpg" for 127.0.0.1 at 2014-03-31 16:23:42 -0500
   [1m[36mPost Load (0.7ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" ASC LIMIT 1[0m
+  [1m[36mCategory Load (1.2ms)[0m  [1mSELECT "categories".* FROM "categories"[0m
+  [1m[35mCategory Load (1.1ms)[0m  SELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT 1
+  [1m[36mCategory Load (0.8ms)[0m  [1mSELECT "categories".* FROM "categories" ORDER BY "categories"."id" ASC LIMIT 1[0m
+  [1m[35mPost Load (24.2ms)[0m  SELECT "posts".* FROM "posts" WHERE "posts"."category_id" = $1  [["category_id", 1]]
+  [1m[36mPost Load (1.1ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.1ms)[0m  INSERT INTO "posts" ("body", "created_at", "email", "title", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"  [["body", "whatsup"], ["created_at", Tue, 01 Apr 2014 01:43:29 UTC +00:00], ["email", "the@ceiling.com"], ["title", "hey"], ["updated_at", Tue, 01 Apr 2014 01:43:29 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (3.9ms)[0m  INSERT INTO "posts" ("body", "created_at", "edit_url", "email", "title", "updated_at") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"  [["body", "whatsup"], ["created_at", Tue, 01 Apr 2014 01:44:32 UTC +00:00], ["edit_url", "z62in5kA"], ["email", "the@ceiling.com"], ["title", "hey"], ["updated_at", Tue, 01 Apr 2014 01:44:32 UTC +00:00]]
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mPost Load (1.1ms)[0m  SELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1
+  [1m[36mPost Load (0.9ms)[0m  [1mSELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1[0m
+  [1m[35mPost Load (0.9ms)[0m  SELECT "posts".* FROM "posts" ORDER BY "posts"."id" DESC LIMIT 1

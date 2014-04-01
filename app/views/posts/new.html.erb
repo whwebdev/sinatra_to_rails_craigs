@@ -1,0 +1,23 @@
+<h3>Post an item for sale in <%= @category.name.capitalize%></h3>
+<div id="post">
+
+
+<%= form_for([@category, @category.posts.build]) do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <br>
+  <br>
+  <%= f.label :body %>
+  <%= f.text_area :body, size: "15x12" %>
+  <br>
+  <br>
+  <%= f.label :price %>
+  <%= f.text_field :price %>
+  <br>
+  <br>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.submit("create") %>
+<% end %>
+
+</div>
